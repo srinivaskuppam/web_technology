@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous">
+    </script>
+    <style>
+        form > input {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        First : <input type="text" id="firstName">
+        Second : <input type="text" id="secondName"> <br>
+        username : <input type="text" id="username"> <br>
+        password : <input type="text" id="password"> <br>
+        dob : <input type="text" id="dob"> <br>
+        postalCode : <input type="text" id="postalCode"> <br>
+        mobile : <input type="text" id="mobile"> <br>
+        e-mail : <input type="text" id="email"> <br>
+        <input type="submit" id="submit">
+        <input type="reset">
+    </form>
+    <script>
+        $(document).ready(function(){
+            $('#submit').click(function(event){
+                event.preventDefault();
+                var firstName = $('#firstName').val();
+                var SecondName = $('#secondName').val();
+                var verifyName = /^[A-Za-z]+$/;
+                if(firstName.length >= 8 &&  SecondName.length >= 8 && firstName.match(verifyName) && SecondName.match(verifyName)){
+                    console.log("First and Last Name is Valid");
+                }
+                else{
+                    console.log("First and Last Name is Invalid")
+                }
+                var username = $('#username').val();
+                var verifyUsername = /^[A-Za-z0-9_]+$/;
+                if(username.match(verifyUsername)){
+                    console.log("username is Valid");
+                }
+                else{
+                    console.log("username is Invalid");
+                }
+                var password = $('#password').val();
+                var verifyPassword = /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>\/?]).{8,}$/;
+                if (password.match(verifyPassword)) {
+                    console.log("Password is valid.");
+                } else {
+                    console.log("Password is invalid.");
+                }
+                var dob = $('#dob').val();
+                var dateRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d\d$/; 
+
+                if (dob.match(dateRegex)) {
+                    var parts = dob.split('/');
+                    var day = parseInt(parts[0], 10);
+                    var month = parseInt(parts[1], 10) - 1; 
+                    var year = parseInt(parts[2], 10);
+                    var dobDate = new Date(year, month, day);
+
+                    if (dobDate.getDate() === day && dobDate.getMonth() === month && dobDate.getFullYear() === year) {
+                        console.log("Date of Birth is valid.");
+                    } else {
+                        console.log("Invalid Date of Birth.");
+                    }
+                } else {
+                    console.log("Invalid Date of Birth format.");
+                } 
+                var mobile = $('#mobile').val();
+                var mobileRegex = /^\d{10}$/;
+
+                if (mobile.match(mobileRegex)) {
+                    console.log("Mobile number is valid.");
+                } else {
+                    console.log("Invalid Mobile number.");
+                }
+                var email = $('#email').val();
+                var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (email.match(emailRegex)) {
+                    console.log("Email address is valid.");
+                } else {
+                    console.log("Invalid email address.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Time Table</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 14px;
+        }
+        .des{
+            text-align: center;
+            font-weight: bold;
+        }
+        .left{
+            font-weight: bold;
+            font-size: 15px;
+        }
+        img{
+            width: 200px;
+            height: 75px;
+        }
+        .name{ 
+            height: 15vh;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+        .logo{
+            padding: 20px 0px 0px 8px;
+        }
+        .cname{
+            margin-left: 3px;
+            padding: 20px 0px 0px 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+        }
+        header{ 
+            margin: 0px 25% 5px 25%;  
+        }
+        .ctable{
+            margin: 0px 25% 0px 25%;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table, td, th{
+            text-align: center;
+            border: 1px solid black;
+        }
+        td, th{
+            padding: 10px;
+        }
+        th{
+            background-color: grey;
+        }
+        .day{
+            background-color: grey;
+            font-weight: bold;
+        
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="name">
+            <div class="logo"><img src="logo.png" alt="logo"></div>
+            <div class="cname">SREE VIDYANIKETHAN ENGINEERING COLLEGE<br>
+                (AUTONOMOUS)<br>
+                Sree Sainath Nagar, Tirupati – 517102
+            </div>
+        </div>
+        <div class="des">
+            <span style="text-decoration: underline;">DEPARTMENT OF COMPUTER SCIENCE AND SYSTEMS ENGINEERING<br>
+            CLASS WORK TIME TABLE (2023-2024)</span><br>
+            III B.Tech II Semester (CSSE-B)
+        </div>
+        <div class="left" style="float: left; padding-left: 25px;"><span>Room No: 612</span></div>
+        <div class="left" style="float: right; padding-right: 25px;"><span>W.E.F.: 18.12.2023</span></div>
+    </header>
+    <div class="ctable">
+        <table>
+            
+            <tr>
+                <th>DAY<br><span>/HR</span></th>
+                <th >10:30AM TO 11:20AM</th>
+                <th>11:20AM TO 12:10PM</th>
+                <th>12:10PM TO 01:00PM</th>
+                <th width="25px" rowspan="6" style="writing-mode: vertical-lr; text-orientation: upright; background-color: grey;">LUNCH BREAK</th>
+                <th>02:15PM TO 03:05PM</th>
+                <th>03:05PM TO 03:55PM</th>
+                <th>03:55PM TO 04:45PM</th>
+            </tr>
+            <tr>
+                <td class="day">MON</td>
+                <td>IS</td>
+                <td>AWSN</td>
+                <td>WT</td>
+                <td>ML</td>
+                <td>PBEA</td>
+                <td>IoT</td>
+            </tr>
+            <tr>
+                <td class="day">TUE</td>
+                <td>ML</td>
+                <td>IS</td>
+                <td>AWSN</td>
+                <td>WT</td>
+                <td>IoT</td>
+                <td>FoE</td>
+            </tr>
+            <tr>
+                <td class="day">WED</td>
+                <td colspan="3">WT LAB <br><span>Room No: 510</span></td>
+                <td>IS</td>
+                <td>LIB</td>
+                <td>PBEA</td>
+            </tr>
+            <tr>
+                <td class="day">THU</td>
+                <td colspan="3">DAD LAB <br><span>Room No: 408-A</span></td>
+                <td>IoT</td>
+                <td>PBEA</td>
+                <td>AWSN</td>
+            </tr>
+            <tr>
+                <td class="day">FRI</td>
+                <td colspan="3">ML LAB <br><span>Room No: E</span></td>
+                <td>WT</td>
+                <td>ML</td>
+                <td>FoE</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

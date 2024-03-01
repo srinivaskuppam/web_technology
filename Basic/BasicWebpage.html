@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Basic WebPage</title>
+    <style>
+        body{
+            background-color: rgb(5, 238, 238);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        abbr{
+            text-align: center;
+            text-decoration: none;
+        }
+        form{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid black;
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .form1{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 50%;
+            border-color: red;
+            border-radius: 50px;
+            margin: 5px;
+        }
+        input[type="submit"],
+        input[type="reset"]{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            width: 20%;
+            border-radius: 50px;
+            background-color: rgb(5, 183, 238);
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover{
+            background-color: rgb(5, 238, 5);
+        }
+        abbr:hover{
+            color: rgb(222, 25, 25);
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <form>
+        <label for="name" class="label1">First Name</label>
+        <input type="text" placeholder="Enter first name" id="name" class="form1"><br>
+        <label for="name1">Surename</label>
+        <input type="text" placeholder="Enter surename" id="name1" class="form1"><br>
+        <label for="name2">Email</label>
+        <input type="email" placeholder="Enter email" id="name2" class="form1"><br>
+        <label for="password">password</label>
+        <input type="password" id="name3" placeholder="Enter password" class="form1"><br>
+        <input type="submit" value="login">
+        <input type="reset" value="reset">
+    </form>
+    <abbr title="BoyaSurendra">author</abbr>
+</body>
+</html>

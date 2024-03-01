@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+</head>
+<body>
+    <h1>Employee Information</h1>
+    Name : <input type="text" id="name"> <br>
+    Emp-id : <input type="text" id="emp"> <br>
+    Dept : <input type="text" id="dept"> <br>
+    Salary : <input type="text" id="salary"> <br>
+    Address : <input type="text" id="add"> <br>
+    <button type="button" onclick="addData()">Add Details</button>
+
+    <script>
+        var db = openDatabase("CSSE", "1.0", "Employee DB", 2 * 1024 * 1024);
+        db.transaction(function (tx){
+            tx.executeSql("CREATE TABLE EMP(name text, emp text, dept text, salary text, address text)");
+        });
+
+        function addData(){
+            var name = document.getElementById('name').value;
+            var empId = document.getElementById('emp').value;
+            var dept = document.getElementById('dept').value;
+            var salary = document.getElementById('salary').value;
+            var address = document.getElementById('address').value;
+            db.transaction(function (tx){
+                tx.executeSql("INSERT INTO EMP(name, emp, dept, salary, address values(?,?,?,?,?))", [name, empId, dept, salary, address])
+            });
+        }
+    </script>
+</body>
+</html>

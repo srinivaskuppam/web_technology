@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        .video{
+            margin-top: 10px;
+            display: grid;
+            place-items: center;
+        }
+        .vid{
+            border-radius: 20px;
+            height: 30px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: rgb(234, 72, 7);
+            color: white;
+        }
+
+        .vid:hover{
+            background-color: rgb(252, 4, 132);
+        }
+    </style>
+</head>
+<body>
+    <div class="photo">
+        <img src="../Images/1.jpg" alt="">
+        <img src="../Images/2.jpg" alt="">
+        <img src="../Images/3.jpg" alt="" id="thirdImg">
+        <img src="../Images/4.jpg" alt="" id="fourthImg">
+        <img src="../Images/5.jpg" alt="">
+    </div>
+    <div class="video">
+        <div style="display: flex; gap: 10px">
+            <span class="vid" data-video="../video/1.mp4">Video 1</span>
+            <span class="vid" data-video="../video/2.mp4">Video 2</span>
+            <span class="vid" data-video="../video/3.mp4">Video 3</span>
+            <span class="vid" data-video="../video/4.mp4">Video 4</span>
+        </div>
+        <br>
+        <video id="video-player" src="../video/1.mp4" height="300" autoplay loop></video>
+    </div>
+    <div class="text" style="height: 75px;">
+        <h4>Animated Text</h4>
+    </div>
+    <div id="resize" style="width: 100px; height: 80px; background-color: lightblue;"></div>
+    <br>
+    <button id="btn">Hide</button>
+    <script>
+        
+        $('#btn').click(function(){
+            var inner = $(this).text();
+            if(inner === 'Hide'){
+                $(this).text("Show");
+                $('.video').hide().find('video').each(function() {
+                    this.pause();
+                });
+            }
+            else{
+                $(this).text("Hide");
+                $('.video').show().find('video').each(function(){
+                    this.play();
+                });
+            }
+        });
+
+
+        var flag = true;
+
+
+        $('#resize').click( function(){
+            if(flag){
+                small.call(this);
+                flag = false;
+            }   
+            else{
+                large.call(this);
+                flag = true;
+            }
+        });
+
+
+        function small() {
+            $(this).css({
+                'height' : '10px',
+                'width' : '10px'
+            });
+        }     
+        function large(){
+            $(this).css({
+                'height' : '80px',
+                'width' : '100px'
+            });
+        }   
+
+        $('#resize').hover( function(){
+                $(this).css('cursor', 'pointer')
+            }
+        );
+
+        var font = 16;
+        setInterval(function() {
+            $('.text h4').css('font-size', font + 'px');
+            font += 1;
+            if(font > 24){
+                font = 16;
+            }
+        }, 500);
+
+        $('.vid').click(function() {
+            var videoSrc = $(this).data('video');
+            $('#video-player').attr('src', videoSrc);
+            $('#video-player')[0].load();
+        });
+
+        $('body').css({
+            'display' : 'grid',
+            'place-items' : 'center'
+        });
+
+        $('.photo').css({
+            'display' : 'flex',
+            'gap' : '5px',
+        });
+
+        $('img').css({
+            'height': '20vh',
+            'width': '70px',
+            'transition': 'flex 0.8s ease',
+            'border-radius': '15px',
+            'cursor' : 'pointer'
+        });
+
+        $('#thirdImg').css({
+            'height': '20vh',
+            'width': '70px',
+            'transition': 'flex 0.8s ease',
+            'border-radius': '15px',
+            'cursor' : 'pointer'
+        });
+
+        $('#fourthImg').css({
+            'height': '20vh',
+            'width': '70px',
+            'transition': 'flex 0.8s ease',
+            'border-radius': '15px',
+            'cursor' : 'pointer'
+        });
+
+        $('img').hover(
+            function() {
+                $(this).css({
+                    'width': '150px',
+                    'justify-content': 'space-around'
+                });
+            },
+            function() {
+                $(this).css({
+                    'width': '70px',
+                    'justify-content': 'initial'
+                });
+            }
+        );
+
+        $('#thirdImg').hover(
+            function() {
+                $(this).css({
+                    'transform' : 'scale(1.1)',
+                    'transition': 'transform 0.4s ease'
+                });
+            },
+            function() {
+                $(this).css({
+                    'transform' : 'scale(1.0)',
+                    'transition': 'transform 0.4s ease'
+                });
+            }
+        );
+
+        $('#fourthImg').hover(
+            function() {
+                $(this).css({
+                    'transform' : 'scale(0.8)',
+                    'transition': 'transform 0.4s ease'
+                });
+            },
+            function() {
+                $(this).css({
+                    'transform' : 'scale(1.0)',
+                    'transition': 'transform 0.4s ease'
+                });
+            }
+        );
+    </script>
+</body>
+</html>

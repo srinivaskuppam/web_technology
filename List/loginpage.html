@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, skyblue 50%, rgb(5, 238, 160) 50%);
+        }
+        
+        .outer{
+            text-align: center;
+            border-radius: 20px;
+            padding: 5% 20% 5% 20%;
+            background: linear-gradient(to left, skyblue 50%, rgb(5, 238, 160) 50%);
+            border: 2px solid black;
+        }
+        .monkey{
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        .details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20%;
+        }
+        .details input{
+            margin: 5%;
+            border-radius: 10px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background: linear-gradient(to right, skyblue 50%, rgb(5, 238, 160) 50%);
+        }
+        .user{
+            width: 200px;
+            height: 30px;
+        }
+        
+        .nam{
+            margin: 0%;
+            padding: 0%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="InstaLogo.jpg" class="monkey" style="margin: 0%; padding: 0%;">
+        <form class="details">
+            <fieldset class="nam">
+                <legend>Enter Name</legend>
+                <input type="text" placeholder="Enter Username" class="user">
+            </fieldset>
+            <input type="password" placeholder="Enter password" class="pass">
+            <input type="submit" value="Submit">
+            <input type="reset" name="" id="reset">
+        </form>
+    </div> 
+</body>
+</html>
